@@ -4,7 +4,7 @@ Gestion du cache
 CacheClearerInterface
 ---------------------
 
-Cette interface permet d'effectuer une action pendant le cache:clear
+Cette interface permet d'effectuer une action pendant le `cache:clear`
 
 ```php
 <?php
@@ -25,7 +25,7 @@ class CacheClear implements CacheClearerInterface
 CacheWarmerInterface
 --------------------
 
-Cette interface permet d'effectuer une action pendant le cache:warmup
+Cette interface permet d'effectuer une action pendant le `cache:warmup`
 
 ```php
 <?php
@@ -43,10 +43,13 @@ class CacheWarmer implements CacheWarmerInterface
 }
 ```
 
-Configuration des pool
+Configuration des pools
 ----------------------
 
 ```yaml
+parameters:
+    redis_dsn: 'redis://redis'    
+
 framework:
     cache:
         default_redis_provider: '%redis_dsn%/2'
@@ -67,7 +70,9 @@ services:
             - cache.pool
 ```
 
-**Remarques :** Il est parfois nécessaire de versionné le cache afin de permet de faire une execution de l'application dans 2 versions différentes en meme temps.
+**Remarques :** 
+
+Il est parfois nécessaire de versionner le cache pour autoriser une execution de l'application dans 2 versions différentes en meme temps.
 Le cas le plus classique, c'est pendant un déploiement sur plusieurs instance
 
 Pour ca, on peut utiliser le namespace:
@@ -82,12 +87,12 @@ framework:
 ```
 
 Attention car le seed est utilisé par l’ensemble des pools, par conséquent l'ensemble des caches seront invalidés
-Si les caches sont des optims, alors pas de problème, par contre si les caches sont indispensable, alors il faut penser à les générer avant la mise en ligne 
+Si les caches sont des optims, alors pas de problème, par contre si les caches sont indispensables, alors il faut penser à les générer avant la mise en ligne 
 
 Doctrine
 --------
 
-Doctrine 3 type de caches:
+Doctrine 3 types de cache:
 - metadata
 - query
 - result
@@ -109,7 +114,7 @@ doctrine:
                     pool: opcache.pool
 ```
 
-Le cache de résultat quand à lui est confié à rédis et est configurer via le bundle `sncRedis` 
+Le cache de résultat quand à lui est confié à rédis et est configurer via le bundle `SncRedis` 
 
 ```yaml
 snc_redis:

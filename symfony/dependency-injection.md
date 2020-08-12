@@ -49,6 +49,6 @@ services:
     #Create an alias
     Symfony\Component\Templating\TemplateNameParserInterface: '@templating.name_parser'
 
-    #Reference new service. This name will be FQCN
+    #Reference new service. This name will be set with her FQCN
     Symfony\Component\String\Slugger\AsciiSlugger:
 ```

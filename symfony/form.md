@@ -79,11 +79,11 @@ final class AppSampleType extends AbstractType
 Validation
 ----------
 
-Dans l'expemple ci-dessous, les 2 principaux cas de contraintes:
-- NotBlank: c'est un contrainte standard comme il en existe bien d'autre dans Symfony
-- Callback: elle est très pratique pour effectuer un controle précis. Ex: Si l'API est activé, alors on doit remplir le user/password
+Dans l'exemple ci-dessous, les 2 principaux cas de contraintes:
+- NotBlank: c'est une contrainte standard comme il en existe bien d'autre dans Symfony
+- Callback: elle est très pratique pour effectuer un controle précis. Ex: Si un champs X vaut Y, alors on doit Z doit être complété
 
-```
+```php
 <?php
 
 namespace App\Form\BackOffice\Collector;
@@ -98,7 +98,7 @@ final class AppSampleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add($name, TextType::class, [
+            ->add('lastname', TextType::class, [
                 'constraints' => [
                     new NotBlank(['message' => 'app.form.not_blank']),
                     new Callback([$this, 'validateJson']),
@@ -115,7 +115,7 @@ final class AppSampleType extends AbstractType
             return;
         }
 
-        if (false /* Remplacer par un vrai test */) {
+        if (false /* Replace by real test */) {
             $context->addViolation(
                 $this->translator->trans('app.form.validate_json')
             );

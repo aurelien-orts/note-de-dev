@@ -24,6 +24,7 @@ Symfony
 - Event: [Event](symfony/event.md)
 - Form: [Form](symfony/form.md)
 - Logs: [Logs](symfony/event.md)
+- Yaml: [Yaml](symfony/yaml.md)
 
 System
 ------

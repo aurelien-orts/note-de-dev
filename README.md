@@ -1,4 +1,4 @@
-Mes note de Devs
+Mes notes de Devs
 ================
 
 CI-CD

@@ -11,6 +11,11 @@ Database
 
 - Postgres: [Postgres](database/postgres.md)
 
+Environnement
+--------
+
+- Composer: [Composer](environment/composer.md)
+
 Javascript
 ----------
 
@@ -29,4 +34,4 @@ Symfony
 System
 ------
 
-- Makefile: [Makefile](system/makefile.md)
+- Makefile: [Makefile](environment/makefile.md)

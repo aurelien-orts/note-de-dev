@@ -4,7 +4,7 @@ Mes notes de Devs
 CI-CD
 -----
 
-- Gitlab: [Gitlab](ci-ci/gitlab.md)
+- Gitlab: [Gitlab](ci-cd/gitlab.md)
 
 Database
 -----
